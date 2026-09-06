@@ -97,9 +97,3 @@ Open `http://localhost:3000` in your browser.
 
 ---
 
-
----
-
-## 🛡️ License
-
-Released under the **MIT License**. Created for research and disaster risk reduction education.
