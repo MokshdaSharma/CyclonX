@@ -1,16 +1,5 @@
 # CycloneX — AI/ML Tropical Cyclone Identification, Classification & Track Prediction
 
-[![CI Pipeline](https://github.com/cyclonex/cyclonex/actions/workflows/ci.yml/badge.svg)](https://github.com/cyclonex/cyclonex/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![FastAPI](https://img.shields.io/badge/API-FastAPI-009688.svg)](https://fastapi.tiangolo.com)
-[![React](https://img.shields.io/badge/Frontend-React_18-61DAFB.svg)](https://reactjs.org)
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg)](https://www.python.org/)
-
-> **IMPORTANT ADVISORY & DISCLAIMER**
-> **Research Prototype / Decision-Support Aid**: CycloneX is an open-source AI/ML decision-support system developed for **Smart India Hackathon (SIH) Problem Statement 26070** (Ministry of Earth Sciences / India Meteorological Department - IMD). All intensity estimates, track forecasts, uncertainty cones, and risk scores are experimental research outputs designed to augment meteorological workflows. **This system does NOT issue official cyclone advisories, warnings, or landfall declarations. Official alerts are issued exclusively by the India Meteorological Department (IMD) / RSMC New Delhi.**
-
----
-
 ## 🌪️ System Overview
 
 CycloneX provides an end-to-end multimodal pipeline for tropical cyclone analysis in the North Indian Ocean (Bay of Bengal & Arabian Sea) and global basins:
@@ -108,52 +97,6 @@ Open `http://localhost:3000` in your browser.
 
 ---
 
-## 🚀 Zero-Cost Deployment Roadmap
-
-CycloneX is architected to run **100% free with zero cloud fees and no credit card required**:
-
-```mermaid
-flowchart LR
-    A[Google Colab / Kaggle Free GPU] -->|Export .keras weights| B[Hugging Face Hub Free Model Repo]
-    B -->|Load in Docker API| C[Hugging Face Spaces Free CPU Tier]
-    C -->|REST API Endpoint| D[Vercel Free Tier React Dashboard]
-    C -->|Local Persistence| E[Embedded SQLite / DuckDB Logs]
-```
-
-### Step 1: Model Training on Free GPU (Google Colab / Kaggle)
-1. Open [`notebooks/demo_dashboard.ipynb`](file:///c:/Users/Mokshda%20Sharma/Desktop/My%20Projects/cycloneX/cycloneX/notebooks/demo_dashboard.ipynb) on Google Colab or Kaggle.
-2. Select **Runtime -> Change runtime type -> T4 GPU (Free Tier)**.
-3. Execute `models/train_intensity_model.py` and `models/train_track_model.py`.
-4. The trained models will export to `models/intensity_model.keras` and output metrics to JSON files.
-
-### Step 2: Model Versioning on Hugging Face Hub (Free)
-1. Create a free account on [huggingface.co](https://huggingface.co).
-2. Upload the model artifacts (`.keras`, configs) to your free Hugging Face Model Repository using `huggingface_hub`.
-
-### Step 3: Deploy Backend on Hugging Face Spaces (Free CPU Docker)
-1. In Hugging Face, click **New Space** -> Select **Docker SDK** -> Free Tier (2 vCPU, 16 GB RAM).
-2. Push the `api/` directory, `configs/`, and `models/` to the Space repository using git.
-3. The Space will automatically build `api/Dockerfile` and expose the live API at `https://<your-space-name>.hf.space`.
-
-### Step 4: Deploy Dashboard on Vercel (Free Tier)
-1. Import your GitHub repository to [Vercel](https://vercel.com).
-2. Set the Root Directory to `dashboard`.
-3. Add an Environment Variable:
-   - `VITE_API_URL` = `https://<your-space-name>.hf.space`
-4. Click **Deploy**. Vercel will build and host the responsive React dashboard on a global CDN.
-
----
-
-## 📊 Evaluation & Benchmarking
-
-| Forecast Model | 6h Haversine Error | 12h Haversine Error | 24h Haversine Error | $V_{max}$ MAE |
-| :--- | :---: | :---: | :---: | :---: |
-| **Persistence Baseline** | ~38 km | ~85 km | ~178 km | 7.8 kt |
-| **LSTM Forecaster** | ~28 km | ~56 km | ~108 km | 5.4 kt |
-| **GRU Forecaster (CycloneX)** | **~24 km** | **~49 km** | **~98 km** | **4.9 kt** |
-| **Multimodal Fusion + MC-Dropout** | **~22 km** | **~44 km** | **~91 km** | **4.2 kt** |
-
-*Evaluation enforces strict cyclone-level partitioning (zero storm-identity overlap).*
 
 ---
 
