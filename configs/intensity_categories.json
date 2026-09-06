@@ -1,0 +1,39 @@
+{
+  "description": "Tropical Cyclone Intensity Category Thresholds (in Knots) aligned with IMD / Saffir-Simpson simplified scale",
+  "unit": "kt",
+  "disclaimer": "AI-assisted decision-support research prototype. Not an official IMD warning.",
+  "categories": [
+    {
+      "name": "Weak",
+      "code": "W",
+      "min_vmax_kt": 0.0,
+      "max_vmax_kt": 33.99,
+      "description": "Depression / Deep Depression (<34 kt)",
+      "color": "#3b82f6"
+    },
+    {
+      "name": "Moderate",
+      "code": "M",
+      "min_vmax_kt": 34.0,
+      "max_vmax_kt": 63.99,
+      "description": "Cyclonic Storm / Severe Cyclonic Storm (34-63 kt)",
+      "color": "#eab308"
+    },
+    {
+      "name": "Strong",
+      "code": "S",
+      "min_vmax_kt": 64.0,
+      "max_vmax_kt": 82.99,
+      "description": "Very Severe Cyclonic Storm (64-82 kt)",
+      "color": "#f97316"
+    },
+    {
+      "name": "Very Strong",
+      "code": "VS",
+      "min_vmax_kt": 83.0,
+      "max_vmax_kt": 250.0,
+      "description": "Extremely Severe / Super Cyclonic Storm (>=83 kt)",
+      "color": "#ef4444"
+    }
+  ]
+}

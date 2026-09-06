@@ -1,0 +1,7 @@
+# Dashboard Git Ignore
+node_modules/
+dist/
+.vite/
+.env
+.env.*
+!.env.example

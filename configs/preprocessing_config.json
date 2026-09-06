@@ -1,0 +1,48 @@
+{
+  "channels": [
+    "IR1",
+    "WV",
+    "PMW"
+  ],
+  "image_shape": [
+    201,
+    201,
+    3
+  ],
+  "dropped_channels": [
+    "VIS"
+  ],
+  "normalization_method": "robust_scaling",
+  "clip_range": [
+    -2.0,
+    3.0
+  ],
+  "target_range": [
+    0.0,
+    255.0
+  ],
+  "channel_stats": {
+    "IR1": {
+      "median": 270.7606,
+      "scale": 18.588,
+      "description": "IR1 robust channel statistics (Kelvin)"
+    },
+    "WV": {
+      "median": 238.5587,
+      "scale": 11.1958,
+      "description": "WV robust channel statistics (Kelvin)"
+    },
+    "PMW": {
+      "median": 266.6426,
+      "scale": 8.1131,
+      "description": "PMW robust channel statistics (Kelvin)"
+    }
+  },
+  "split_ratio": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "split_by": "cyclone_id",
+  "disclaimer": "AI-assisted decision-support research prototype. Not an official IMD warning."
+}

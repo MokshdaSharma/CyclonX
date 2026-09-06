@@ -1,0 +1,67 @@
+{
+  "model_name": "EfficientNetB0_Intensity_Regressor",
+  "task": "Tropical Cyclone Vmax (Knots) Estimation",
+  "sample_count": 8,
+  "regression": {
+    "mae": 3.5406,
+    "rmse": 4.3785,
+    "r2": 0.4122,
+    "mean_bias": -1.4127
+  },
+  "classification": {
+    "accuracy": 1.0,
+    "precision_macro": 1.0,
+    "recall_macro": 1.0,
+    "f1_macro": 1.0,
+    "f1_weighted": 1.0,
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        8,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "per_class_breakdown": {
+      "Weak": {
+        "count": 0,
+        "mae": 0.0,
+        "rmse": 0.0
+      },
+      "Moderate": {
+        "count": 8,
+        "mae": 3.54,
+        "rmse": 4.38
+      },
+      "Strong": {
+        "count": 0,
+        "mae": 0.0,
+        "rmse": 0.0
+      },
+      "Very Strong": {
+        "count": 0,
+        "mae": 0.0,
+        "rmse": 0.0
+      }
+    }
+  },
+  "disclaimer": "AI-assisted research prototype. Not an official IMD warning."
+}

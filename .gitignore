@@ -1,0 +1,89 @@
+# ==========================================
+# CycloneX - Git Ignore Configuration
+# ==========================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+.installed.cfg
+*.egg
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+
+# Virtual Environments
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Node & Frontend Build Artifacts
+node_modules/
+dashboard/node_modules/
+dashboard/dist/
+.vite/
+dashboard/.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+dashboard/.env
+dashboard/.env.*
+!dashboard/.env.example
+
+# Large Data & Model Weights (store in Hugging Face Hub / cloud storage)
+data/*.h5
+data/*.hdf5
+data/*.nc
+models/*.keras
+models/*.h5
+models/*.weights.h5
+models/*.pt
+models/*.pth
+models/*.onnx
+models/*.tflite
+
+# Operating System & IDEs
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
